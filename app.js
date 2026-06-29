@@ -7,11 +7,12 @@ const app = express();
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+console.log("VERIFY_TOKEN =", process.env.VERIFY_TOKEN);
+console.log("VERIFY_TOKEN =", process.env.PORT);
 // Set port and verify_token
 const port = process.env.PORT || 3000;
 const verifyToken = process.env.VERIFY_TOKEN;
 
-console.log("VERIFY_TOKEN =", verifyToken);
 
 // Route for GET requests
 app.get('/', (req, res) => {
